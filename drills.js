@@ -58,3 +58,15 @@ const fireWarning = hazardWarningCreator('fire');
 console.log(fireWarning('main street'));
 console.log(fireWarning('main street'));
 console.log(iceWarning('main street'));
+
+function turtle(arr){
+    for (let i=0; i<arr.length;i++){
+        let value = arr[i];
+        let result= arr.filter(value=>value[0]<0);
+    }
+    return result;
+}
+
+const testArr= [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+
+console.log(turtle(testArr));

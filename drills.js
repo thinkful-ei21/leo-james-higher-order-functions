@@ -60,11 +60,13 @@ console.log(fireWarning('main street'));
 console.log(iceWarning('main street'));
 
 function turtle(arr){
-    for (let i=0; i<arr.length;i++){
-        let value = arr[i];
-        let result= arr.filter(value=>value[0]<0);
-    }
-    return result;
+    let result= arr.filter(value=>value[0]>=0 && value[1]>=0);
+    let movement= result.map(value=>value[0]+value[1]);
+    let total= 0;
+    movement.forEach(value=>total+=value);
+    console.log (result);
+    console.log (movement);
+    return total;
 }
 
 const testArr= [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];

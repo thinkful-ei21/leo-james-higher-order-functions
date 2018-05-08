@@ -36,4 +36,25 @@ const filteredNames = filter(myNames, testFunction);
 
 console.log(filteredNames)
 
-  
+function hazardWarningCreator(typeOfWarning) {
+    let warningCounter = 0;
+
+    return function(location) {
+        warningCounter++;
+        console.log(`Danger! There is a ${typeOfWarning} hazard at ${location}.`);
+        if (warningCounter === 1) {
+            console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time today.`);
+        }
+        else {
+            console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} times today.`);
+        }
+    };
+}
+
+const rocksWarning = hazardWarningCreator('rocks on the road');
+const iceWarning = hazardWarningCreator('ice on the road');
+const fireWarning = hazardWarningCreator('fire');
+
+console.log(fireWarning('main street'));
+console.log(fireWarning('main street'));
+console.log(iceWarning('main street'));
